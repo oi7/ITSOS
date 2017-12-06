@@ -78,15 +78,10 @@ public class ARHitTest : MonoBehaviour {
 	/// NOTE: A Co-routine that shuffles 
 	/// </summary>
 	IEnumerator ShuffleTime(int numSuffles) {
-		//TODO:
-		//iterate numShuffles times
-		//pick two hats randomly from spawnedObject and call the Co-routine Swap with their Transforms
-		IEnumerator ShuffleTime(int numSuffles) {
-			for (int i = 0; i < numSuffles; i++) {
-				GameObject randFrom = spawnedObjects[Random.Range(0, spawnedObjects.Count)];
-				GameObject randTo = spawnedObjects[Random.Range(0, spawnedObjects.Count)];
-				yield return StartCoroutine(Swap(randFrom.transform, randTo.transform, .5f));
-			}
+		for (int i = 0; i < numSuffles; i++) {
+			GameObject randFrom = spawnedObjects[Random.Range(0, spawnedObjects.Count)];
+			GameObject randTo = spawnedObjects[Random.Range(0, spawnedObjects.Count)];
+			yield return StartCoroutine(Swap(randFrom.transform, randTo.transform, .5f));
 		}
 	}
 
