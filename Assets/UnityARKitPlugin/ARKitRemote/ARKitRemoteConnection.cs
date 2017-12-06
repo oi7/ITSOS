@@ -56,28 +56,28 @@ namespace UnityEngine.XR.iOS
 
 		}
 
-		void OnGUI()
-		{
-			
-			if (!bTexturesInitialized) 
-			{
-				if (currentPlayerID != -1) {
-					guimessage = "Connected to ARKit Remote device : " + currentPlayerID.ToString ();
-
-					if (GUI.Button (new Rect ((Screen.width / 2) - 200, (Screen.height / 2) - 200, 400, 100), "Start Remote ARKit Session")) 
-					{
-						SendInitToPlayer ();
-					}
-				} 
-				else 
-				{
-					guimessage = "Please connect to player in the console menu";
-				}
-
-				GUI.Box (new Rect ((Screen.width / 2) - 200, (Screen.height / 2) + 100, 400, 50), guimessage);
-			}
-
-		}
+//		void OnGUI()
+//		{
+//			
+//			if (!bTexturesInitialized) 
+//			{
+//				if (currentPlayerID != -1) {
+//					guimessage = "Connected to ARKit Remote device : " + currentPlayerID.ToString ();
+//
+//					if (GUI.Button (new Rect ((Screen.width / 2) - 200, (Screen.height / 2) - 200, 400, 100), "Start Remote ARKit Session")) 
+//					{
+//						SendInitToPlayer ();
+//					}
+//				} 
+//				else 
+//				{
+//					guimessage = "Please connect to player in the console menu";
+//				}
+//
+//				GUI.Box (new Rect ((Screen.width / 2) - 200, (Screen.height / 2) + 100, 400, 50), guimessage);
+//			}
+//
+//		}
 
 		void PlayerDisconnected(int playerID)
 		{

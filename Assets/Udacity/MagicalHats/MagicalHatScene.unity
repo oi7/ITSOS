@@ -214,7 +214,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 503601885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -484, z: 0}
+  m_LocalPosition: {x: 0, y: -483, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1524753831}
@@ -336,7 +336,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 513259503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -583, z: 0}
+  m_LocalPosition: {x: 0, y: -582, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1383001553}
@@ -515,7 +515,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 643573623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1035, y: 638, z: 0}
+  m_LocalPosition: {x: 1035, y: 637, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 503601886}
@@ -959,7 +959,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Place Hat
+  m_Text: Place a car
 --- !u!222 &1524753833
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ARCamera: {fileID: 901383415}
-  hitPrefab: {fileID: 1838270949056036, guid: c33c7b846bd174e6d80400f7f3f3881e, type: 2}
+  hitPrefab: {fileID: 122594, guid: 22831fcc2700a6f41a043fd93c4050c5, type: 2}
 --- !u!4 &1911704577
 Transform:
   m_ObjectHideFlags: 0
