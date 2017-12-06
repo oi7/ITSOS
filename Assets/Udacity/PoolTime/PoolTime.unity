@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4498185, g: 0.49988538, b: 0.57559717, a: 1}
+  m_IndirectSpecularColor: {r: 0.44983393, g: 0.499902, b: 0.5756032, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -77,15 +77,17 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -107,6 +109,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &685915295
 GameObject:
@@ -164,7 +168,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!114 &685915297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,9 +283,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ARCamera: {fileID: 685915296}
   PoolItemsPrefab:
-  - {fileID: 1262047738258234, guid: b6d15a2df31b241b2b7b882eef06674d, type: 2}
-  - {fileID: 1794234434251398, guid: 30d306cf7dbeb4218a1a75778b29a4ac, type: 2}
-  - {fileID: 1822493399821030, guid: 7f9a9ae037a21426fa66db60c4505b89, type: 2}
+  - {fileID: 152736, guid: 14499f04b638bf2468da941edc4bb500, type: 2}
+  - {fileID: 149706, guid: acf87b13bbd1b4c459fca0851de3ca72, type: 2}
+  - {fileID: 180238, guid: d13cffeafcb7b504198bb67a602df32c, type: 2}
 --- !u!4 &979885526
 Transform:
   m_ObjectHideFlags: 0

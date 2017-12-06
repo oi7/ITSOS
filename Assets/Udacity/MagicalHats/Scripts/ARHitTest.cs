@@ -38,6 +38,9 @@ public class ARHitTest : MonoBehaviour {
 		if (hitResults.Count > 0) {
 			foreach (var hitResult in hitResults) {
 				//TODO: get the position and rotations to spawn the hat
+				Vector3 pos = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
+				Quaternion rotation = UnityARMatrixOps.GetRotation (hitResult.worldTransform);
+				spawnedObjects.Add( Instantiate (hitPrefab, pos, rotation) ); // in order to use for shuffling
 				return true;
 			}
 		}
@@ -55,6 +58,13 @@ public class ARHitTest : MonoBehaviour {
 		//TODO: Raycast from the screen point into the virtual world and see if we hit anything
 		//if we do, then check to see if it is part of the spawnedObjects array
 		//if so, then delete the object we raycast hit
+		RaycastHit hit;
+		if (Physics.Raycast (ARCamera.ScreenPointToRay (point), out hit)) {
+			GameObject item = hit.collider.transform.parent.gameObject; //parent is what is stored in our area;
+			if (spawnedObjects.Remove (item) ) { //make sure to remove the hat from the array for consistancy
+				Destroy (item);
+			}
+		}
 	}
 		
 	/// <summary>
@@ -71,13 +81,24 @@ public class ARHitTest : MonoBehaviour {
 		//TODO:
 		//iterate numShuffles times
 		//pick two hats randomly from spawnedObject and call the Co-routine Swap with their Transforms
-		yield return null; //placeholder to make sure this compiles
+		IEnumerator ShuffleTime(int numSuffles) {
+			for (int i = 0; i < numSuffles; i++) {
+				GameObject randFrom = spawnedObjects[Random.Range(0, spawnedObjects.Count)];
+				GameObject randTo = spawnedObjects[Random.Range(0, spawnedObjects.Count)];
+				yield return StartCoroutine(Swap(randFrom.transform, randTo.transform, .5f));
+			}
+		}
 	}
 
 	IEnumerator Swap(Transform item1, Transform item2, float duration){
-		//Lerp the position of item1 and item2 so that they switch places
-		//the transition should take "duration" amount of time
-		//Optional: try making sure the hats do not collide with each other
-		yield return null; //placeholder to make sure this compiles
+		float t = 0;
+		Vector3 startPos = item1.position;
+		Vector3 endPos = item2.position;
+		while (t < duration) {
+			t += Time.deltaTime;
+			item1.position = Vector3.Lerp (startPos, endPos, t / duration);
+			item2.position = Vector3.Lerp (endPos, startPos, t / duration);
+			yield return null;
+		}
 	}
 }
